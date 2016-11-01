@@ -1,5 +1,4 @@
 package com.space.net;
-
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -10,6 +9,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class NetServer {
+	
 	
 	public void bind(int port) throws Exception{
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -38,8 +38,28 @@ public class NetServer {
 		@Override
 		protected void initChannel(SocketChannel ch) throws Exception {
 			// TODO Auto-generated method stub
+			ch.pipeline().addLast(new NetMessageCode());
 			ch.pipeline().addLast(new NetServerHandler());
 		}
 	}
+	
+	//使用枚举实现单列
+	private enum Singleton {
+
+        INSTANCE;
+		NetServer processor;
+
+        Singleton() {
+            this.processor = new NetServer();
+        }
+
+        NetServer getProcessor() {
+            return processor;
+        }
+    }
+    
+    public static NetServer getInstance() {
+        return Singleton.INSTANCE.getProcessor();
+    }
 	
 }
