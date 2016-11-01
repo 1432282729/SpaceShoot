@@ -1,10 +1,15 @@
 package com.space.net;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 
 import com.space.game.server.GameServer;
 import com.space.message.ReceiveMessage;
+import com.space.message.SendMessage;
+import com.space.util.JsonUtil;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -33,6 +38,16 @@ public class NetServerHandler extends ChannelHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{
 		ReceiveMessage rmsg = (ReceiveMessage) msg;
 		System.out.println("msgId="+rmsg.getId());
+		
+		SendMessage sm = new SendMessage();
+		Map<String, Object> dataMap = new HashMap<String, Object>();
+		dataMap.put("msgId", 202);
+		dataMap.put("name", "yoon");
+		dataMap.put("cn", "银保部");
+		String jsonStr = JsonUtil.parseObjectToJsonString(dataMap);
+		sm.setData(jsonStr.getBytes("UTF-8"));
+		GameServer.getInstance().SendMsgHandler(ctx, sm);
+		
 		//GameServer.ReceiveMsgHandler(ctx, rmsg);
 	}
 	

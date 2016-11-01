@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using LitJson;
 public class StartController : MonoBehaviour {
 
 	SendMsg sendMsg;
@@ -18,8 +18,11 @@ public class StartController : MonoBehaviour {
 
 	//新游戏
 	public void NewGame(){
-
-		sendMsg.send ("new name");
+		JsonData data = new JsonData();
+		data["msgId"] = 201;
+		data["msgInfo"] = "new name 尹彬彬";
+		string jsonInfo = data.ToJson();
+		sendMsg.send (jsonInfo);
 	}
 
 

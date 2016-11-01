@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Gradient.cs" />
+     <Compile Include="Assets\Script\Net\ReceiveMsg.cs" />
      <Compile Include="Assets\Script\Net\SendMsg.cs" />
      <Compile Include="Assets\Script\Net\TcpClient.cs" />
      <Compile Include="Assets\Script\UI\DestoryByContact.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Script\UI\ScrollingBackGround.cs" />
      <Compile Include="Assets\Script\UI\StartController.cs" />
      <Compile Include="Assets\Script\UI\WeaponController.cs" />
+     <Compile Include="Assets\Script\Util\ByteBuffer.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
@@ -72,17 +74,14 @@
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="LitJson">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

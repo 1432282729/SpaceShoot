@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Net;  
+using System; 
 using System.Net.Sockets;  
 using System.Threading;  
 using System.Text; 
@@ -11,6 +12,8 @@ public class TcpClient : MonoBehaviour {
 	private Socket client;
 	
 	private string msg; 
+
+	private static ReceiveMsg receiveMsg = new ReceiveMsg();
 
 	public void ConnectServer(){
 		try {
@@ -29,21 +32,26 @@ public class TcpClient : MonoBehaviour {
 	}
 	
 	public void SendMsg(string str){
-		byte[] buffer = Encoding.UTF8.GetBytes (str);
-		client.Send (buffer);
+		int length = str.Length+4;
+		ByteBuffer buf = ByteBuffer.Allocate(length);
+		buf.WriteInt (length);
+		buf.WriteBytes (Encoding.UTF8.GetBytes (str));
+		client.Send (buf.ToArray());
 	}
 	
 	void ReceiveMsg(){
-		byte[] buffer = new byte[1024 * 1024];
-		int len = 0;
 		while(true){
-			len = client.Receive(buffer);
-			if (buffer[0] != 1) 
+
+			byte[] disbyte = new byte[1024];
+			int msglenth = 0;
+			msglenth = client.Receive(disbyte);
+			if (msglenth < 1) 
 			{  
-				msg = Encoding.UTF8.GetString(buffer, 0, len);
-				//JsonReader reader = new JsonTextReader(new StringReader(jsonText));
-				Debug.Log("len="+len+",msg="+msg);
+				Debug.Log("空包");
+				continue;
 			}
+			msg = Encoding.UTF8.GetString(disbyte, 4, msglenth);
+			receiveMsg.receive(msg);
 		}
 	}
 
