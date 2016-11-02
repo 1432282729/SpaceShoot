@@ -103,11 +103,11 @@ public class DictionaryManager {
                         case "msgId":
                             msgId = Integer.parseInt(entry.getValue());
                             break;
-                        case "handler":
+                        case "class":
                             handlerClass = Class.forName(entry.getValue());
                             if (handlerClass.getSuperclass() != MessageHandler.class)
                             {
-                                logger.error("Class type error! 'handler' must be come.core.command.Handler: "
+                                logger.error("Class type error! 'handler' must be com.space.message.ReceiveMessage.MessageHandler: "
                                         + entry.getValue() + ", file: " + filePath);
                             }
                             break;

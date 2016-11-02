@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 每条客户端消息及其对应的服务端处理器配置文件 -->
-<messages>
-    <msg handler="com.game.player.handler.LoginHandler" msgId="201"/>
+<!-- 
+
+协议编号规则：协议区分（01/02） + 功能模块（01） + handler编号
+server——>client 01开头   
+client——>server 02开头 
+
+-->
+<handlers>
+    <handler class="com.space.game.player.handler.LoginHandler" msgId="020101"/>
     
-</messages>
+</handlers>

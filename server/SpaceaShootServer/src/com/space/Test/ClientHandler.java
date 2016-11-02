@@ -10,6 +10,11 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
+/**
+ * 处理客户端请求
+ * @author 尹彬彬
+ *
+ */
 public class ClientHandler extends ChannelHandlerAdapter {
 	
     private final ByteBuf firstMessage;
