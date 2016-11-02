@@ -6,6 +6,8 @@ public class SendMsg : MonoBehaviour {
 
 	private static TcpClient tcpClient = new TcpClient();
 
+	static SendMsg instance = null;
+
 	public void connect(){
 	
 		tcpClient.ConnectServer ();
@@ -20,4 +22,19 @@ public class SendMsg : MonoBehaviour {
 		tcpClient.exit ();
 	}
 
+	private SendMsg()
+	{
+	}
+	
+	public static SendMsg Instance
+	{
+		get
+		{
+			if (instance==null)
+			{
+				instance = new SendMsg();
+			}
+			return instance;
+		}
+	}
 }

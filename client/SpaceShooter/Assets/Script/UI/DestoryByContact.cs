@@ -41,7 +41,12 @@ public class DestoryByContact : MonoBehaviour {
 
 		if(explosion != null){
 			Object explosionObj = Instantiate(explosion, other.transform.position, other.transform.rotation);
-			//加分提示
+			//请求得分
+
+			string score = scorePrompt.GetComponent<TextMesh>().text;
+			ReqCalScore.Instance.CalculateScore(score);
+
+			//得分提示
 			scorePrompt = GameObject.Instantiate(scorePrompt);
 			scorePrompt.transform.position = other.transform.position;
 

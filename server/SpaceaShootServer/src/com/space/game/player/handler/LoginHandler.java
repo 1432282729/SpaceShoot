@@ -10,7 +10,7 @@ import com.space.message.MessageHandler;
 
 public class LoginHandler extends MessageHandler {
 	
-	private static final Logger logger = Logger.getLogger("HandlerDealTime");
+	private static final Logger logger = Logger.getLogger(LoginHandler.class);
 	
 	@Override
 	public void action() {

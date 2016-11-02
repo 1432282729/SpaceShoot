@@ -6,9 +6,9 @@ public class DictionaryManager {
 
 
 
-	Dictionary<int, string> handlerNames = new Dictionary<int, string>();
+	static Dictionary<int, string> handlerNames = new Dictionary<int, string>();
 
-	Dictionary<int, MessageHandler> handlerDictonary = new Dictionary<int, MessageHandler>();
+	static Dictionary<int, MessageHandler> handlerDictonary = new Dictionary<int, MessageHandler>();
 
 	static DictionaryManager instance = null;
 
@@ -16,9 +16,9 @@ public class DictionaryManager {
 	 * 注册handler 名字
 	 **/
 	public void registHandlerName(){
-		handlerNames.Add (1, "ClientHandler");
-		handlerNames.Add (2, "PlayerHandler");
-		
+		handlerNames.Add (HandlerNumber.ONEPLAYERCOUNT, "OnePlayerGameCountHandler");
+		handlerNames.Add (HandlerNumber.MULTIPLAYERCOUNT, "MultiPlayerGameCountHandler");
+		handlerNames.Add (HandlerNumber.CALSCORE, "ResCalSoreHandler");
 	}
 
 	/**
@@ -31,6 +31,9 @@ public class DictionaryManager {
 		foreach (KeyValuePair<int, string> kvp in handlerNames)
 		{
 			System.Type type = System.Type.GetType(kvp.Value); 
+			if(type == null){
+				continue;
+			}
 			MessageHandler handler = (MessageHandler)type.Assembly.CreateInstance(type.Name);
 			handlerDictonary.Add(kvp.Key, handler);
 		}
@@ -44,6 +47,11 @@ public class DictionaryManager {
 	public Dictionary<int, MessageHandler> getHandlerDictonary(){
 
 		return handlerDictonary;
+	}
+
+	public MessageHandler getMessageHandler(int handlerNum){
+
+		return handlerDictonary[handlerNum];
 	}
 
 

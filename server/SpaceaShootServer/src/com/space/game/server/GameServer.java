@@ -2,6 +2,7 @@ package com.space.game.server;
 
 import org.apache.log4j.Logger;
 
+import com.space.message.DictionaryManager;
 import com.space.message.ReceiveMessage;
 import com.space.message.SendMessage;
 import com.space.net.NetServer;
@@ -20,9 +21,12 @@ public class GameServer implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		try {
-			logger.debug("启动ok");
+			//加载handler
+			DictionaryManager.getInstance().loadHandlerConfig();
+			
 			NetServer.getInstance().bind(9000);
-			//DictionaryManager.getInstance().loadHandlerConfig(handlerPath);
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

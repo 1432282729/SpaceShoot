@@ -20,7 +20,7 @@ public class NetMessageCode  extends ByteToMessageCodec<SendMessage> {
 	@Override
 	protected void encode(ChannelHandlerContext ctx, SendMessage smsg,
 			ByteBuf out) throws Exception {
-		logger.debug("encode");
+		logger.info("encode");
 	}
 	
 	@Override

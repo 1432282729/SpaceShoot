@@ -62,8 +62,8 @@ public class DictionaryManager {
 	
 	@SuppressWarnings("rawtypes")
 	//加载handler配置
-    public synchronized void loadHandlerConfig(String filePath) throws Exception{
-		
+    public synchronized void loadHandlerConfig() throws Exception{
+		String filePath = System.getProperty("user.dir") + "/config/handler.xml";
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		File xmlFile = new File(filePath);

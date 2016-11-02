@@ -45,6 +45,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Core\MessageHandler.cs" />
+     <Compile Include="Assets\Script\Game\GameStart.cs" />
+     <Compile Include="Assets\Script\Game\manager\DictionaryManager.cs" />
+     <Compile Include="Assets\Script\Game\play\entity\Player.cs" />
+     <Compile Include="Assets\Script\Game\play\handler\MultiPlayerGameCountHandler.cs" />
+     <Compile Include="Assets\Script\Game\play\handler\OnePlayerGameCountHandler.cs" />
+     <Compile Include="Assets\Script\Game\score\handler\ReqCalScore.cs" />
+     <Compile Include="Assets\Script\Game\score\handler\ResCalSoreHandler.cs" />
+     <Compile Include="Assets\Script\Game\struts\HandlerNumber.cs" />
      <Compile Include="Assets\Script\Gradient.cs" />
      <Compile Include="Assets\Script\Net\ReceiveMsg.cs" />
      <Compile Include="Assets\Script\Net\SendMsg.cs" />
@@ -74,11 +83,17 @@
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
  <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/LitJson.dll</HintPath>

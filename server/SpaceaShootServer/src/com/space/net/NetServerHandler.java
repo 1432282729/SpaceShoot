@@ -25,30 +25,29 @@ public class NetServerHandler extends ChannelHandlerAdapter {
       
     @Override  
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {  
-        logger.debug(ctx.channel().id()+"离开了");
+        logger.info(ctx.channel().id()+"离开了");
     }  
 	
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         
-    	logger.debug(ctx.channel().id()+"首次连接");
+    	logger.info(ctx.channel().id()+"首次连接");
     }
     
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{
 		ReceiveMessage rmsg = (ReceiveMessage) msg;
-		System.out.println("msgId="+rmsg.getId());
 		
-		SendMessage sm = new SendMessage();
+/*		SendMessage sm = new SendMessage();
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		dataMap.put("msgId", 202);
 		dataMap.put("name", "yoon");
 		dataMap.put("cn", "银保部");
 		String jsonStr = JsonUtil.parseObjectToJsonString(dataMap);
 		sm.setData(jsonStr.getBytes("UTF-8"));
-		GameServer.getInstance().SendMsgHandler(ctx, sm);
+		GameServer.getInstance().SendMsgHandler(ctx, sm);*/
 		
-		//GameServer.ReceiveMsgHandler(ctx, rmsg);
+		GameServer.ReceiveMsgHandler(ctx, rmsg);
 	}
 	
 	
