@@ -3,15 +3,14 @@ package com.space.util;
 import org.apache.log4j.Logger;
 
 import com.alibaba.fastjson.JSONObject;
-import com.space.game.player.bean.Player;
 import com.space.game.server.GameServer;
 import com.space.message.SendMessage;
 
 import io.netty.channel.ChannelHandlerContext;
 
-public class MessageUtils {
+public class MessageUtil {
 	
-	private static Logger logger = Logger.getLogger(MessageUtils.class);
+	private static Logger logger = Logger.getLogger(MessageUtil.class);
 	
 	
 	public static void send(ChannelHandlerContext session, SendMessage message){

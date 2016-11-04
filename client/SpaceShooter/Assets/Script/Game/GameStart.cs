@@ -9,7 +9,7 @@ public class GameStart {
 	public void start () {
 
 		//加载handler
-		DictionaryManager.Instance.loadHandlers ();
+		HandlerManager.Instance.registHandles();
 		//获取链接
 		SendMsg.Instance.connect();
 		//

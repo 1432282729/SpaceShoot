@@ -7,7 +7,7 @@ public class StartController : MonoBehaviour {
 	void Start () {
 
 		//开始游戏
-		GameStart.Instance.start ();
+
 
 	}
 	
@@ -36,5 +36,13 @@ public class StartController : MonoBehaviour {
 		SendMsg.Instance.exit ();
 	}
 
+	void OnApplicationQuit(){
+		Debug.Log ("Over");
+		SendMsg.Instance.exit ();
+	}
 
 }
+
+
+
+

@@ -119,7 +119,10 @@ public class GameController : MonoBehaviour {
 	}
 
 
-
+	void OnApplicationQuit(){
+		Debug.Log ("Over");
+		SendMsg.Instance.exit ();
+	}
 
 }
 

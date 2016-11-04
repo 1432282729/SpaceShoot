@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.space.message.MessageHandler;
 import com.space.message.ReceiveMessage;
 import com.space.util.JsonUtil;
-import com.space.util.MessageUtils;
+import com.space.util.MessageUtil;
 
 public class CalScoreHandler extends MessageHandler {
 	
@@ -30,7 +30,7 @@ public class CalScoreHandler extends MessageHandler {
 		dataMap.put("handlerNumber", 10301);
 		dataMap.put("score", score);
 		JSONObject dataJson = JsonUtil.parseObjectToJsonObject(dataMap);
-		MessageUtils.sentMsg(rmsg.getContext(), dataJson);
+		MessageUtil.sentMsg(rmsg.getContext(), dataJson);
 	}
 	
 }

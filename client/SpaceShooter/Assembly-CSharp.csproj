@@ -47,13 +47,17 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Core\MessageHandler.cs" />
      <Compile Include="Assets\Script\Game\GameStart.cs" />
-     <Compile Include="Assets\Script\Game\manager\DictionaryManager.cs" />
-     <Compile Include="Assets\Script\Game\play\entity\Player.cs" />
+     <Compile Include="Assets\Script\Game\login\handler\ResLoginHandler.cs" />
+     <Compile Include="Assets\Script\Game\login\logic\ReqLoginServer.cs" />
+     <Compile Include="Assets\Script\Game\login\ui\LoginController.cs" />
+     <Compile Include="Assets\Script\Game\manager\HandlerManager.cs" />
      <Compile Include="Assets\Script\Game\play\handler\MultiPlayerGameCountHandler.cs" />
      <Compile Include="Assets\Script\Game\play\handler\OnePlayerGameCountHandler.cs" />
      <Compile Include="Assets\Script\Game\score\handler\ReqCalScore.cs" />
      <Compile Include="Assets\Script\Game\score\handler\ResCalSoreHandler.cs" />
-     <Compile Include="Assets\Script\Game\struts\HandlerNumber.cs" />
+     <Compile Include="Assets\Script\Game\struts\HandlerBean.cs" />
+     <Compile Include="Assets\Script\Game\struts\PlayerBean.cs" />
+     <Compile Include="Assets\Script\Game\struts\PlotDialogue.cs" />
      <Compile Include="Assets\Script\Gradient.cs" />
      <Compile Include="Assets\Script\Net\ReceiveMsg.cs" />
      <Compile Include="Assets\Script\Net\SendMsg.cs" />
@@ -69,6 +73,7 @@
      <Compile Include="Assets\Script\UI\StartController.cs" />
      <Compile Include="Assets\Script\UI\WeaponController.cs" />
      <Compile Include="Assets\Script\Util\ByteBuffer.cs" />
+     <Compile Include="Assets\Script\Util\ExcelUtil.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
@@ -95,8 +100,17 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
+ <Reference Include="Excel">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/Excel.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="LitJson">
  <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

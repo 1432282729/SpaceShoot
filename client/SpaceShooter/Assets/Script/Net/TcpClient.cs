@@ -15,12 +15,14 @@ public class TcpClient : MonoBehaviour {
 
 	private static ReceiveMsg receiveMsg = new ReceiveMsg();
 
+	private Thread threadReceive;
+
 	public void ConnectServer(){
 		try {
 			client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); 
 			client.Connect("127.0.0.1",9000);
 			Debug.Log("连接服务器成功");
-			Thread threadReceive = new Thread(ReceiveMsg);  
+			threadReceive = new Thread(ReceiveMsg);  
 			threadReceive.IsBackground = true;  
 			threadReceive.Start();  
 			
@@ -32,7 +34,7 @@ public class TcpClient : MonoBehaviour {
 	}
 	
 	public void SendMsg(string str){
-		int length = str.Length+4;
+		int length = str.Length + 4;
 		ByteBuffer buf = ByteBuffer.Allocate(length);
 		buf.WriteInt (length);
 		buf.WriteBytes (Encoding.UTF8.GetBytes (str));
@@ -50,7 +52,7 @@ public class TcpClient : MonoBehaviour {
 				Debug.Log("空包");
 				continue;
 			}
-			msg = Encoding.UTF8.GetString(disbyte, 4, msglenth);
+			msg = Encoding.UTF8.GetString(disbyte, 4, msglenth - 4);
 			receiveMsg.receive(msg);
 		}
 	}
@@ -58,7 +60,7 @@ public class TcpClient : MonoBehaviour {
 
 	public void exit()  
 	{  
-		client.Shutdown(SocketShutdown.Both);  
+		threadReceive.Abort ();  
 		client.Close();  
 	}  
 }

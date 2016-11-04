@@ -1,7 +1,5 @@
-package com.space.game.player.struts;
+package com.space.game.login.struts;
 
-
-import com.space.game.player.bean.Player;
 
 import io.netty.util.AttributeKey;
 

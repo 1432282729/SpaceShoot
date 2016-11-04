@@ -4,7 +4,7 @@ using System.Collections;
 public class SendMsg : MonoBehaviour {
 
 
-	private static TcpClient tcpClient = new TcpClient();
+	static TcpClient tcpClient = new TcpClient();
 
 	static SendMsg instance = null;
 

@@ -71,8 +71,17 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
+ <Reference Include="Excel">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/Excel.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="LitJson">
  <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
