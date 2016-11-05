@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
-import com.space.game.login.struts.LoginResult;
+import com.space.game.struts.ClientHandlerNumber;
+import com.space.game.struts.RequstResult;
 import com.space.util.JsonUtil;
 import com.space.util.MessageUtil;
 
@@ -21,8 +22,8 @@ public class LoginServer {
 	public void login(ChannelHandlerContext context, String name, String pwd){
 		
 		Map<String, Object> dataMap = new HashMap<String, Object>();
-		dataMap.put("handlerNumber", 10101);
-		dataMap.put("result", LoginResult.NOTEXISTNAME);
+		dataMap.put("handlerNumber", ClientHandlerNumber.ResLoginHandler);
+		dataMap.put("result", RequstResult.NOTEXISTNAME);
 		JSONObject dataJson = JsonUtil.parseObjectToJsonObject(dataMap);
 		MessageUtil.sentMsg(context, dataJson);
 		

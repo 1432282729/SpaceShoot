@@ -1,6 +1,6 @@
-package com.space.game.login.struts;
+package com.space.game.struts;
 
-public class LoginResult {
+public class RequstResult {
 	
 	public static final int NOTEXISTNAME = 1; //不存在的用户名
 	public static final int ERRORPASSWORD = 2; //密码错误

@@ -1,4 +1,4 @@
-package com.space.game.login.struts;
+package com.space.game.login.bean;
 
 public class Player {
 	
