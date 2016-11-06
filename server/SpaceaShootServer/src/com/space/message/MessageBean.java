@@ -2,13 +2,13 @@ package com.space.message;
 
 import com.space.message.MessageHandler;
 
-public class DictionaryBean {
+public class MessageBean {
 	
 	private final int msgId;
 	
 	private final Class<? extends MessageHandler> handler;
 	
-	public DictionaryBean(int msgId, Class<? extends MessageHandler> handler)
+	public MessageBean(int msgId, Class<? extends MessageHandler> handler)
     {
         this.msgId = msgId;
         this.handler = handler;

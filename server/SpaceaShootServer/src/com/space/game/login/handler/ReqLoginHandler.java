@@ -11,9 +11,9 @@ import com.space.message.ReceiveMessage;
 import com.space.util.TimeUtil;
 
 
-public class LoginHandler extends MessageHandler {
+public class ReqLoginHandler extends MessageHandler {
 	
-	private static final Logger logger = Logger.getLogger(LoginHandler.class);
+	private static final Logger logger = Logger.getLogger(ReqLoginHandler.class);
 	
 	@Override
 	public void action() {

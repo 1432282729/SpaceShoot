@@ -1,4 +1,4 @@
-package com.space.Test;
+package test;
 
 import java.util.HashMap;
 import java.util.Map;

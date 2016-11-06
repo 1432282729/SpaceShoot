@@ -6,6 +6,6 @@ server——>client 1开头
 client——>server 2开头 
 -->
 <handlers>
-    <handler class="com.space.game.login.handler.LoginHandler" msgId="20101"/>
+    <handler class="com.space.game.login.handler.ReqLoginHandler" msgId="20101"/>
     <handler class="com.space.game.score.handler.CalScoreHandler" msgId="20301"/>
 </handlers>

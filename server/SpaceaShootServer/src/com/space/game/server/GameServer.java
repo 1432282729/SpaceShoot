@@ -2,7 +2,8 @@ package com.space.game.server;
 
 import org.apache.log4j.Logger;
 
-import com.space.message.DictionaryManager;
+import com.space.db.DataBaseManager;
+import com.space.message.MessageManager;
 import com.space.message.ReceiveMessage;
 import com.space.message.SendMessage;
 import com.space.net.NetServer;
@@ -22,8 +23,10 @@ public class GameServer implements Runnable {
 		// TODO Auto-generated method stub
 		try {
 			//加载handler
-			DictionaryManager.getInstance().loadHandlerConfig();
-			
+			MessageManager.getInstance().loadHandlerConfig();
+			//加载数据库配置
+			DataBaseManager.getInstance().loadDbConfig();
+			//起服
 			NetServer.getInstance().bind(9000);
 			
 			

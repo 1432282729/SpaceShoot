@@ -7,7 +7,7 @@ using System.Threading;
 using System.Text; 
 
 
-public class TcpClient : MonoBehaviour {
+public class TcpClient{
 	
 	private Socket client;
 	

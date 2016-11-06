@@ -2,8 +2,8 @@ package com.space.game.server;
 
 import org.apache.log4j.Logger;
 
-import com.space.message.DictionaryBean;
-import com.space.message.DictionaryManager;
+import com.space.message.MessageBean;
+import com.space.message.MessageManager;
 import com.space.message.MessageHandler;
 import com.space.message.ReceiveMessage;
 
@@ -27,8 +27,8 @@ public class ReceiveWorker implements Runnable{
 		// TODO Auto-generated method stub
 		try {
 			//获取消息字典
-			DictionaryBean dictionaryBean = DictionaryManager.getInstance().get(msgId);
-			MessageHandler handler = dictionaryBean.getHandler().newInstance();
+			MessageBean messageBean = MessageManager.getInstance().get(msgId);
+			MessageHandler handler = messageBean.getHandler().newInstance();
 			handler.setMessage(rmsg);
 			//处理函数
 			handler.action();

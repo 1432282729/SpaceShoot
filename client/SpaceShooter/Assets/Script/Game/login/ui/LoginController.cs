@@ -39,6 +39,14 @@ public class LoginController : MonoBehaviour {
 		SendMsg.Instance.exit ();
 	}
 
+	void Update(){
+		MessageHandler handler = (MessageHandler)MsgQueueManager.Instance.dequeue ();
+		if(handler == null){
+			return;
+		}
+		handler.action ();
+	}
+
 }
 
 

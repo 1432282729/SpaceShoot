@@ -7,7 +7,7 @@ public class ReqCalScore {
 
 	public void CalculateScore(string score){
 		JsonData data = new JsonData();
-		data["msgId"] = 20301;
+        data["msgId"] = ServerHandlerNumber.CalScoreHandler;
 		data["score"] = score;
 		string msgInfo = data.ToJson();
 		SendMsg.Instance.send (msgInfo);

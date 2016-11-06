@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SendMsg : MonoBehaviour {
+public class SendMsg{
 
 
 	static TcpClient tcpClient = new TcpClient();

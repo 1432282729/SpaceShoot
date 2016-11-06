@@ -51,6 +51,7 @@
      <Compile Include="Assets\Script\Game\login\logic\ReqLoginServer.cs" />
      <Compile Include="Assets\Script\Game\login\ui\LoginController.cs" />
      <Compile Include="Assets\Script\Game\manager\HandlerManager.cs" />
+     <Compile Include="Assets\Script\Game\manager\MsgQueueManager.cs" />
      <Compile Include="Assets\Script\Game\play\handler\MultiPlayerGameCountHandler.cs" />
      <Compile Include="Assets\Script\Game\play\handler\OnePlayerGameCountHandler.cs" />
      <Compile Include="Assets\Script\Game\score\handler\ReqCalScore.cs" />
@@ -88,17 +89,11 @@
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Excel">
  <HintPath>D:/SpaceShoot/client/SpaceShooter/Assets/Plugins/Excel.dll</HintPath>

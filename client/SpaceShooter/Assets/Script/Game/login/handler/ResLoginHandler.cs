@@ -7,32 +7,31 @@ public class ResLoginHandler : MessageHandler{
 	public override void action(){
 
 		JsonData jsonData = (JsonData)MsgData;
-		string result = jsonData["result"].ToString();
+		int result = int.Parse(jsonData["result"].ToString());
 		string resStr = getResult (result);
-
 		GameObject gameObj = GameObject.Find ("LoginPrompt");
-
 		Text promptText = gameObj.GetComponent<Text>();
 		promptText.text = resStr;
-
-		Debug.Log ("我是ResLoginHandler"+resStr);
-		
+        if (result == RequstResult.LOGINSUCCESS)
+        {
+            Application.LoadLevel("Start");
+        }
 	}
 
-	public string getResult(string result){
+	public string getResult(int result){
 		string str = "";
 		switch(result){
-			case "1" :
+            case RequstResult.NOTEXISTNAME:
 				str = "<color=red>*提示：账号不存在</color>";
 				break;
-			case "2" :
+            case RequstResult.ERRORPASSWORD:
 				str = "<color=red>*提示：密码错误</color>";
 				break;
-			case "3" :
+            case RequstResult.LOGINSUCCESS:
+                str = "";
+                break;
+			default :
 				str = "<color=red>*提示：未知错误</color>";
-				break;
-			case "4" :
-				str = "<color=red>*提示：登录成功</color>";
 				break;
 		}
 		return str;

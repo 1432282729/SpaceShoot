@@ -33,12 +33,12 @@ public class StartController : MonoBehaviour {
 		Application.Quit();
 		#endif
 
-		SendMsg.Instance.exit ();
+		//SendMsg.Instance.exit ();
 	}
 
 	void OnApplicationQuit(){
 		Debug.Log ("Over");
-		SendMsg.Instance.exit ();
+		//SendMsg.Instance.exit ();
 	}
 
 }

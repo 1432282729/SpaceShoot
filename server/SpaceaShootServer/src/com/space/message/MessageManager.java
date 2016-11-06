@@ -20,10 +20,10 @@ import org.w3c.dom.NodeList;
 
 import com.space.message.MessageHandler;
 
-public class DictionaryManager {
+public class MessageManager {
 	
-	private static final Map<Integer, DictionaryBean> handlerMap = new ConcurrentHashMap<>();
-	private static Logger logger = Logger.getLogger(DictionaryManager.class);
+	private static final Map<Integer, MessageBean> handlerMap = new ConcurrentHashMap<>();
+	private static Logger logger = Logger.getLogger(MessageManager.class);
 	
 	/**
      * 用枚举来实现单例
@@ -31,22 +31,22 @@ public class DictionaryManager {
     private enum Singleton
     {
         INSTANCE;
-        DictionaryManager processor;
+        MessageManager processor;
 
         Singleton()
         {
-            this.processor = new DictionaryManager();
+            this.processor = new MessageManager();
         }
 
-        DictionaryManager getHandlerDictionary()
+        MessageManager getMessageManager()
         {
             return processor;
         }
     }
 	
-    public static DictionaryManager getInstance()
+    public static MessageManager getInstance()
     {
-        return Singleton.INSTANCE.getHandlerDictionary();
+        return Singleton.INSTANCE.getMessageManager();
     }
     
 	/**
@@ -54,7 +54,7 @@ public class DictionaryManager {
 	 * @param msgId
 	 * @return
 	 */
-	public DictionaryBean get(int msgId){
+	public MessageBean get(int msgId){
 		
 		return handlerMap.get(msgId);
 		
@@ -63,7 +63,7 @@ public class DictionaryManager {
 	@SuppressWarnings("rawtypes")
 	//加载handler配置
     public synchronized void loadHandlerConfig() throws Exception{
-		String filePath = System.getProperty("user.dir") + "/config/handler.xml";
+		String filePath = System.getProperty("user.dir") + "/config/handler_config.xml";
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		File xmlFile = new File(filePath);
@@ -128,7 +128,7 @@ public class DictionaryManager {
                     return;
                 }
                 logger.info("Load message>> " + msgId + ":[handler " + handlerClass + "]");
-                handlerMap.put(msgId, new DictionaryBean(msgId, handlerClass));
+                handlerMap.put(msgId, new MessageBean(msgId, handlerClass));
             }
 		}else
         {
@@ -137,7 +137,7 @@ public class DictionaryManager {
 	}
     
     
-   	public static Map<Integer, DictionaryBean> getHandlermap() {
+   	public static Map<Integer, MessageBean> getHandlermap() {
    		return handlerMap;
    	}
 	

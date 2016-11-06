@@ -12,7 +12,9 @@ public class ReceiveMsg{
 			int handlerNumber = int.Parse(jsonData["handlerNumber"].ToString());
 			MessageHandler handler = HandlerManager.Instance.getMessageHandler(handlerNumber);
 			handler.MsgData = jsonData;
-			handler.action();
+			MsgQueueManager.Instance.enqueue(handler);
+
+			//handler.action();
 
 		}catch(JsonException ex){
 			Debug.LogError(ex.ToString());
