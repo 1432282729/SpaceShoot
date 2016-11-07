@@ -91,6 +91,7 @@
     <Compile Include="Assets\Script\Game\play\handler\MultiPlayerGameCountHandler.cs" />
     <Compile Include="Assets\Script\Game\play\handler\OnePlayerGameCountHandler.cs" />
     <Compile Include="Assets\Script\Game\play\ui\GameMoudleController.cs" />
+    <Compile Include="Assets\Script\Game\play\ui\GameOptionController.cs" />
     <Compile Include="Assets\Script\Game\score\handler\ResCalSoreHandler.cs" />
     <Compile Include="Assets\Script\Game\score\logic\ReqCalScore.cs" />
     <Compile Include="Assets\Script\Game\struts\HandlerBean.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\Script\UI\PlayerController.cs" />
     <Compile Include="Assets\Script\UI\RamdomRotator.cs" />
     <Compile Include="Assets\Script\UI\ScrollingBackGround.cs" />
-    <Compile Include="Assets\Script\UI\StartController.cs" />
     <Compile Include="Assets\Script\UI\WeaponController.cs" />
     <Compile Include="Assets\Script\Util\ByteBuffer.cs" />
     <Compile Include="Assets\Script\Util\ExcelUtil.cs" />

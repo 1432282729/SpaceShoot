@@ -24,7 +24,11 @@ public class LoginController : MonoBehaviour {
 		//promptText.text = "<color=red>*提示：密码错误</color>";
 		//Application.LoadLevel ("Start");
 	}
-	
+
+    public void Regist() {
+
+        Debug.Log("注册账号");
+    }
 	public void Quit(){
 		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;

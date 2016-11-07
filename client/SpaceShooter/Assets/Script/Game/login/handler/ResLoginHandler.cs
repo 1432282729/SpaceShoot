@@ -14,7 +14,7 @@ public class ResLoginHandler : MessageHandler{
 		promptText.text = resStr;
         if (result == RequstResult.LOGINSUCCESS)
         {
-            Application.LoadLevel("Start");
+            Application.LoadLevel("GameOption");
         }
 	}
 
