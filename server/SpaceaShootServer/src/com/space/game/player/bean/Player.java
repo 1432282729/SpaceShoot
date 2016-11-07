@@ -1,8 +1,7 @@
 package com.space.game.player.bean;
 
-import java.util.Date;
 
-import com.space.util.TimeUtil;
+import com.space.game.threads.thread.HeartPulseThead;
 
 import io.netty.channel.ChannelHandlerContext;
 
@@ -14,9 +13,15 @@ public class Player {
 	
 	private String password;
 	
-	private String lastLoginTime = TimeUtil.format2string(new Date().getTime());
+	private String lastLoginTime;
 	
 	private ChannelHandlerContext context;
+	
+	private long lastHeartPulseTime;
+	
+	private boolean heartPulse;//心脏是否跳动
+	
+	private HeartPulseThead heartPulseThead; //心跳
 	
 	public int getId() {
 		return id;
@@ -53,4 +58,33 @@ public class Player {
 	public void setContext(ChannelHandlerContext context) {
 		this.context = context;
 	}
+
+	public long getLastHeartPulseTime() {
+		return lastHeartPulseTime;
+	}
+
+	public void setLastHeartPulseTime(long lastHeartPulseTime) {
+		this.lastHeartPulseTime = lastHeartPulseTime;
+	}
+
+	public void setLastLoginTime(String lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
+	}
+
+	public boolean isHeartPulse() {
+		return heartPulse;
+	}
+
+	public void setHeartPulse(boolean heartPulse) {
+		this.heartPulse = heartPulse;
+	}
+
+	public HeartPulseThead getHeartPulseThead() {
+		return heartPulseThead;
+	}
+
+	public void setHeartPulseThead(HeartPulseThead heartPulseThead) {
+		this.heartPulseThead = heartPulseThead;
+	}
+	
 }

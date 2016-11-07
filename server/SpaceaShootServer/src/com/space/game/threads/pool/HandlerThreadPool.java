@@ -1,14 +1,14 @@
-package com.space.thread;
+package com.space.game.threads.pool;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 
-public class HandlerPool  extends ThreadPoolExecutor {
+public class HandlerThreadPool  extends ThreadPoolExecutor {
 	
 	
-    public HandlerPool(String name, int corePoolSize, int maxQueueSize)
+    public HandlerThreadPool(String name, int corePoolSize, int maxQueueSize)
     {
         super(corePoolSize, 2 * corePoolSize, 30, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
 

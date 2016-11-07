@@ -3,6 +3,7 @@ package com.space.net;
 import org.apache.log4j.Logger;
 
 import com.space.game.server.GameServer;
+import com.space.game.server.TheadServer;
 import com.space.message.ReceiveMessage;
 
 import io.netty.channel.ChannelHandlerAdapter;
@@ -31,7 +32,8 @@ public class NetServerHandler extends ChannelHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{
 		ReceiveMessage rmsg = (ReceiveMessage) msg;
-		GameServer.ReceiveMsgHandler(ctx, rmsg);
+		//game线程
+		GameServer.getInstance().ReceiveMsgHandler(ctx, rmsg);
 	}
 	
 	

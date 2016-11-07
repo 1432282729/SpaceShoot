@@ -18,7 +18,7 @@ public class MessageUtil {
 		if(session == null){
 			return;
 		}
-		GameServer.SendMsgHandler(session, message);
+		GameServer.getInstance().SendMsgHandler(session, message);
 	}
 	
 	/*public static void sentToPlayer(Player player, JSONObject jsonObj){

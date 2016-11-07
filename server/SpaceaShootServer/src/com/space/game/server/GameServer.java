@@ -3,19 +3,19 @@ package com.space.game.server;
 import org.apache.log4j.Logger;
 
 import com.space.db.DataBaseManager;
+import com.space.game.threads.pool.HandlerThreadPool;
 import com.space.message.MessageManager;
 import com.space.message.ReceiveMessage;
 import com.space.message.SendMessage;
 import com.space.net.NetServer;
-import com.space.thread.HandlerPool;
 
 import io.netty.channel.ChannelHandlerContext;
 
 public class GameServer implements Runnable {
 	
 	private final static Logger logger = Logger.getLogger(GameServer.class);
-	private static final HandlerPool sendExcutor = new HandlerPool("消息发送队列", 10, -1);
-	private static final HandlerPool receiveExcutor = new HandlerPool("消息接收队列", 10, -1);
+	private static final HandlerThreadPool sendExcutor = new HandlerThreadPool("消息发送队列", 10, -1);
+	private static final HandlerThreadPool receiveExcutor = new HandlerThreadPool("消息接收队列", 10, -1);
 	
 	
 	@Override
@@ -38,13 +38,13 @@ public class GameServer implements Runnable {
 	}
 	
 	//处理接收到的客户端消息
-	public static void ReceiveMsgHandler(ChannelHandlerContext ctx, ReceiveMessage msg){
+	public void ReceiveMsgHandler(ChannelHandlerContext ctx, ReceiveMessage msg){
 		int msgId = msg.getId();
 		receiveExcutor.addTask(new ReceiveWorker(msgId,msg));
 	}
 	
 	//发送客户端消息
-	public static void SendMsgHandler(ChannelHandlerContext ctx, SendMessage msg){
+	public void SendMsgHandler(ChannelHandlerContext ctx, SendMessage msg){
 		
 		sendExcutor.addTask(new SendWorker(ctx, msg));
 	}

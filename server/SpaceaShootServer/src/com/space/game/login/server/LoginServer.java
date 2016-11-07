@@ -1,5 +1,6 @@
 package com.space.game.login.server;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,11 +9,14 @@ import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSONObject;
 import com.space.game.player.bean.Player;
 import com.space.game.server.ManagerServer;
+import com.space.game.server.TheadServer;
 import com.space.game.struts.ClientHandlerNumber;
 import com.space.game.struts.RequstResult;
 import com.space.game.struts.SessionAttribute;
+import com.space.game.threads.thread.HeartPulseThead;
 import com.space.util.JsonUtil;
 import com.space.util.MessageUtil;
+import com.space.util.TimeUtil;
 
 import io.netty.channel.ChannelHandlerContext;
 
@@ -36,7 +40,13 @@ public class LoginServer {
 			}else{
 				result = RequstResult.LOGINSUCCESS;
 				player.setContext(context);
+				player.setLastLoginTime(TimeUtil.format2string(new Date().getTime()));
+				player.setLastHeartPulseTime(new Date().getTime());
 				context.attr(SessionAttribute.PLAYER).set(player);
+				//启动心跳线程
+				HeartPulseThead heartPulseThead = new HeartPulseThead(context);
+				player.setHeartPulseThead(heartPulseThead);
+				player.getHeartPulseThead().start();
 			}
 		}
 		Map<String, Object> dataMap = new HashMap<String, Object>();

@@ -6,6 +6,8 @@ server——>client 1开头
 client——>server 2开头 
 -->
 <handlers>
+	<!-- 心跳 -->
+	<handler class="com.space.game.player.handler.ReqHeartPulseHandler" msgId="20001"/>
     <handler class="com.space.game.login.handler.ReqLoginHandler" msgId="20101"/>
     <handler class="com.space.game.score.handler.CalScoreHandler" msgId="20301"/>
 </handlers>
