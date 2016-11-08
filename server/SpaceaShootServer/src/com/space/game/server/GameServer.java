@@ -26,6 +26,7 @@ public class GameServer implements Runnable {
 			MessageManager.getInstance().loadHandlerConfig();
 			//加载数据库配置
 			DataBaseManager.getInstance().loadDbConfig();
+			ThreadServer.getHeartPulseThead().start();
 			//起服
 			NetServer.getInstance().bind(9000);
 			

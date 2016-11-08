@@ -21,7 +21,7 @@ public class Player {
 	
 	private boolean heartPulse;//心脏是否跳动
 	
-	private HeartPulseThead heartPulseThead; //心跳
+	//private HeartPulseThead heartPulseThead; //心跳
 	
 	public int getId() {
 		return id;
@@ -79,12 +79,12 @@ public class Player {
 		this.heartPulse = heartPulse;
 	}
 
-	public HeartPulseThead getHeartPulseThead() {
+/*	public HeartPulseThead getHeartPulseThead() {
 		return heartPulseThead;
 	}
 
 	public void setHeartPulseThead(HeartPulseThead heartPulseThead) {
 		this.heartPulseThead = heartPulseThead;
-	}
+	}*/
 	
 }

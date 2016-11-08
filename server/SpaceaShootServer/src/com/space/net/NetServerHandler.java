@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import com.space.game.server.GameServer;
 import com.space.game.server.ManagerServer;
 import com.space.message.ReceiveMessage;
-
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -23,7 +22,9 @@ public class NetServerHandler extends ChannelHandlerAdapter {
 	
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        
+
+    	ManagerServer.channelGroup.add(ctx.channel());
+    	
     	logger.info(ctx.channel().id()+"首次连接");
     }
     

@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSONObject;
 import com.space.game.player.bean.Player;
 import com.space.game.server.ManagerServer;
-import com.space.game.server.TheadServer;
 import com.space.game.struts.ClientHandlerNumber;
 import com.space.game.struts.RequstResult;
 import com.space.game.struts.SessionAttribute;
@@ -42,11 +41,11 @@ public class LoginServer {
 				player.setLastLoginTime(TimeUtil.format2string(new Date().getTime()));
 				player.setLastHeartPulseTime(TimeUtil.Time());
 				player.setHeartPulse(true);
-				context.attr(SessionAttribute.PLAYER).set(player);
+				context.channel().attr(SessionAttribute.PLAYER).set(player);
 				//启动心跳线程
-				HeartPulseThead heartPulseThead = new HeartPulseThead(context);
+				/*HeartPulseThead heartPulseThead = new HeartPulseThead(context);
 				player.setHeartPulseThead(heartPulseThead);
-				player.getHeartPulseThead().start();
+				player.getHeartPulseThead().start();*/
 			}
 		}
 		Map<String, Object> dataMap = new HashMap<String, Object>();

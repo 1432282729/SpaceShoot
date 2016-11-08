@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 
 import com.space.db.DataBaseManager;
 import com.space.game.player.bean.Player;
+import com.space.game.server.ManagerServer;
 import com.space.game.struts.SessionAttribute;
 
 import io.netty.channel.ChannelHandlerContext;
@@ -30,7 +31,7 @@ public class PlayerServer {
 	 */
 	public Player getPlayerInCache(ChannelHandlerContext context){
 		
-		Player player = context.attr(SessionAttribute.PLAYER).get();
+		Player player = context.channel().attr(SessionAttribute.PLAYER).get();
 		
 		return player;
 	}
@@ -38,7 +39,8 @@ public class PlayerServer {
 	public void playerQuitGame(ChannelHandlerContext context){
 		
 		logger.info("玩家：" + context.attr(SessionAttribute.PLAYER).get().getName() + " 离开了");
-		context.attr(SessionAttribute.PLAYER).remove();
+		
+		ManagerServer.channelGroup.remove(context.channel());
 		
 	}
 	
