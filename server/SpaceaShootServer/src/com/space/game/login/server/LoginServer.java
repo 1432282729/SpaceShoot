@@ -40,12 +40,8 @@ public class LoginServer {
 				player.setContext(context);
 				player.setLastLoginTime(TimeUtil.format2string(new Date().getTime()));
 				player.setLastHeartPulseTime(TimeUtil.Time());
-				player.setHeartPulse(true);
+				player.setOnLine(true);
 				context.channel().attr(SessionAttribute.PLAYER).set(player);
-				//启动心跳线程
-				/*HeartPulseThead heartPulseThead = new HeartPulseThead(context);
-				player.setHeartPulseThead(heartPulseThead);
-				player.getHeartPulseThead().start();*/
 			}
 		}
 		Map<String, Object> dataMap = new HashMap<String, Object>();

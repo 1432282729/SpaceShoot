@@ -23,7 +23,7 @@ public class ClientHandler extends ChannelHandlerAdapter {
     	
     	Map<String, Object> dataMap = new HashMap<String, Object>();
     	dataMap.put("msgId", 20101);
-    	dataMap.put("name", "Yoon");
+    	dataMap.put("name", "Yoon2");
     	dataMap.put("pwd", "123");
     	String dataInfo = JsonUtil.parseObjectToJsonString(dataMap);
         byte[] req = dataInfo.getBytes("UTF-8");

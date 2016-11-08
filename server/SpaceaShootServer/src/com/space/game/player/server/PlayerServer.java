@@ -37,11 +37,10 @@ public class PlayerServer {
 	}
 	
 	public void playerQuitGame(ChannelHandlerContext context){
-		
-		logger.info("玩家：" + context.attr(SessionAttribute.PLAYER).get().getName() + " 离开了");
-		
+		Player player = context.channel().attr(SessionAttribute.PLAYER).get();
+		player.setOnLine(false);
+		logger.info("玩家：" + player.getName() + " 退出游戏...");
 		ManagerServer.channelGroup.remove(context.channel());
-		
 	}
 	
 	/**

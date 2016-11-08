@@ -36,7 +36,6 @@ public class HeartThread extends Thread {
 		        hearMessage.writeInt(req.length);
 		        hearMessage.writeBytes(req);
 		        ctx.writeAndFlush(hearMessage);
-		        System.out.println("count="+count);
 		        if(count > 3){
 		        	break;
 		        }

@@ -19,10 +19,8 @@ public class ReqHeartPulseHandler extends MessageHandler{
 		ReceiveMessage rmsg = getMessage();
 		//获取player
 		ChannelHandlerContext context = rmsg.getContext();
-		Player player = context.attr(SessionAttribute.PLAYER).get();
-		if(!player.isHeartPulse()){
-			player.setHeartPulse(true);
-		}
+		Player player = context.channel().attr(SessionAttribute.PLAYER).get();
+		player.setLastHeartPulseTime(TimeUtil.Time());//设置最近一次心跳的时间
 		
 		long dealtime = TimeUtil.Time() - start;
 		if (dealtime > 300) {

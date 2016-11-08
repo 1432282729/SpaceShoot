@@ -22,7 +22,7 @@ public class NetServerHandler extends ChannelHandlerAdapter {
 	
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-
+    	
     	ManagerServer.channelGroup.add(ctx.channel());
     	
     	logger.info(ctx.channel().id()+"首次连接");

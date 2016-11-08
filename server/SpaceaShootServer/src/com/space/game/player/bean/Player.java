@@ -1,8 +1,5 @@
 package com.space.game.player.bean;
 
-
-import com.space.game.threads.thread.HeartPulseThead;
-
 import io.netty.channel.ChannelHandlerContext;
 
 public class Player {
@@ -19,9 +16,8 @@ public class Player {
 	
 	private long lastHeartPulseTime;
 	
-	private boolean heartPulse;//心脏是否跳动
-	
-	//private HeartPulseThead heartPulseThead; //心跳
+	private boolean onLine;//是否在线
+
 	
 	public int getId() {
 		return id;
@@ -71,20 +67,13 @@ public class Player {
 		this.lastLoginTime = lastLoginTime;
 	}
 
-	public boolean isHeartPulse() {
-		return heartPulse;
+	public boolean isOnLine() {
+		return onLine;
 	}
 
-	public void setHeartPulse(boolean heartPulse) {
-		this.heartPulse = heartPulse;
+	public void setOnLine(boolean onLine) {
+		this.onLine = onLine;
 	}
-
-/*	public HeartPulseThead getHeartPulseThead() {
-		return heartPulseThead;
-	}
-
-	public void setHeartPulseThead(HeartPulseThead heartPulseThead) {
-		this.heartPulseThead = heartPulseThead;
-	}*/
 	
+
 }
