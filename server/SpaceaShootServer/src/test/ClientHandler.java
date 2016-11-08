@@ -22,8 +22,9 @@ public class ClientHandler extends ChannelHandlerAdapter {
     public ClientHandler() throws Exception {
     	
     	Map<String, Object> dataMap = new HashMap<String, Object>();
-    	dataMap.put("msgId", 201);
-    	dataMap.put("datainfo", "dddddddddd");
+    	dataMap.put("msgId", 20101);
+    	dataMap.put("name", "Yoon");
+    	dataMap.put("pwd", "123");
     	String dataInfo = JsonUtil.parseObjectToJsonString(dataMap);
         byte[] req = dataInfo.getBytes("UTF-8");
         firstMessage = Unpooled.buffer(req.length+4);
@@ -36,6 +37,8 @@ public class ClientHandler extends ChannelHandlerAdapter {
         //与服务端建立连接后
         System.out.println("client channelActive..");
         ctx.writeAndFlush(firstMessage);
+        //启动心跳线程
+        new HeartThread(ctx).start();
     }
 
     @Override
@@ -43,11 +46,11 @@ public class ClientHandler extends ChannelHandlerAdapter {
             throws Exception {
         System.out.println("client channelRead..");
         //服务端返回消息后
-        ByteBuf buf = (ByteBuf) msg;
+/*        ByteBuf buf = (ByteBuf) msg;
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
         String body = new String(req, "UTF-8");
-        System.out.println("Now is :" + body);
+        System.out.println("Now is :" + body);*/
     }
 
     @Override

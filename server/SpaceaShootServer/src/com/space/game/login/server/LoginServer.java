@@ -30,7 +30,6 @@ public class LoginServer {
 		//先去内存中查找
 		player = ManagerServer.playerServer.getPlayerInCache(context);
 		//进入数据库中查找
-		logger.info("player="+player);
 		if(player == null){
 			player = ManagerServer.playerServer.getPlayerByNameInDb(name);
 			if(player == null){
@@ -41,7 +40,8 @@ public class LoginServer {
 				result = RequstResult.LOGINSUCCESS;
 				player.setContext(context);
 				player.setLastLoginTime(TimeUtil.format2string(new Date().getTime()));
-				player.setLastHeartPulseTime(new Date().getTime());
+				player.setLastHeartPulseTime(TimeUtil.Time());
+				player.setHeartPulse(true);
 				context.attr(SessionAttribute.PLAYER).set(player);
 				//启动心跳线程
 				HeartPulseThead heartPulseThead = new HeartPulseThead(context);

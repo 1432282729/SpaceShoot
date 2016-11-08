@@ -28,7 +28,7 @@ public class ReqLoginHandler extends MessageHandler {
 		ManagerServer.loginServer.login(context, name, password);
 		
 		long dealtime = TimeUtil.Time() - start;
-		if (dealtime > 300) {
+		if (dealtime > 1000) {
 			logger.error("LoginHandler deal long time:" + dealtime);
 		}
 	}

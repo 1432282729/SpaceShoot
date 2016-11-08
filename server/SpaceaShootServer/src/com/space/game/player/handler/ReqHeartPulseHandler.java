@@ -1,7 +1,4 @@
 package com.space.game.player.handler;
-
-import java.util.Date;
-
 import org.apache.log4j.Logger;
 
 import com.space.game.player.bean.Player;
@@ -23,10 +20,8 @@ public class ReqHeartPulseHandler extends MessageHandler{
 		//获取player
 		ChannelHandlerContext context = rmsg.getContext();
 		Player player = context.attr(SessionAttribute.PLAYER).get();
-		logger.debug("用户 " + player.getName() + ",心跳="+player.isHeartPulse());
 		if(!player.isHeartPulse()){
 			player.setHeartPulse(true);
-			player.setLastHeartPulseTime(new Date().getTime());
 		}
 		
 		long dealtime = TimeUtil.Time() - start;
