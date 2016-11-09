@@ -17,6 +17,6 @@
     
     <!-- mybatis的mapper文件，每个xml配置文件对应一个接口 -->
     <mappers>
-        <mapper resource="com/space/game/login/mapper/Player.xml"/>
+        <mapper resource="com/space/game/player/mapper/Player.xml"/>
     </mappers>
 </configuration>

@@ -18,6 +18,9 @@ public class Player {
 	
 	private boolean onLine;//是否在线
 
+	private String machineCode;
+	
+	private String macAddress;
 	
 	public int getId() {
 		return id;
@@ -73,6 +76,22 @@ public class Player {
 
 	public void setOnLine(boolean onLine) {
 		this.onLine = onLine;
+	}
+
+	public String getMachineCode() {
+		return machineCode;
+	}
+
+	public void setMachineCode(String machineCode) {
+		this.machineCode = machineCode;
+	}
+
+	public String getMacAddress() {
+		return macAddress;
+	}
+
+	public void setMacAddress(String macAddress) {
+		this.macAddress = macAddress;
 	}
 	
 

@@ -1,5 +1,7 @@
 package com.space.game.threads.thread;
 
+import java.util.stream.Collectors;
+
 import org.apache.log4j.Logger;
 
 import com.space.game.player.bean.Player;
@@ -26,7 +28,7 @@ public class HeartPulseThead extends Thread {
 			//心跳线程，一直启动
 			while(true){
 				
-				Thread.sleep(60 * 1000);//每隔60秒检测心跳
+				Thread.sleep(5 * 1000);//每隔60秒检测心跳
 				
 				heartCheck();
 			}
@@ -38,7 +40,6 @@ public class HeartPulseThead extends Thread {
 	}
 	
 	public void heartCheck(){
-		
 		ChannelGroup channelGroup = ManagerServer.channelGroup;
 		for(Channel channel : channelGroup){
 			Player player = channel.attr(SessionAttribute.PLAYER).get();
@@ -51,13 +52,8 @@ public class HeartPulseThead extends Thread {
 			if(player.isOnLine() && intervalTime > 5 * 1000){
 				//大于十秒，判断用户断线，断开客户端连接
 				logger.info("用户 " + player.getName() + " 60秒未发送心跳，主动断开连接");
-				channel.close();		
-				break;
+				channel.close();
 			}
 		}
-		
 	}
-	
-	
-	
 }
