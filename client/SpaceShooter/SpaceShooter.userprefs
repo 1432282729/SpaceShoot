@@ -1,16 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Net\TcpClient.cs">
     <Files>
+      <File FileName="Assets\Script\UI\ScrollingBackGround.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Game\login\ui\LoginController.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Game\login\handler\ResLoginHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Core\MessageHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Net\ReceiveMsg.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Game\manager\MsgQueueManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Game\GameStart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Game\login\logic\ReqLoginServer.cs" Line="14" Column="38" />
-      <File FileName="Assets\Script\Net\SendMsg.cs" Line="4" Column="21" />
-      <File FileName="Assets\Script\Net\TcpClient.cs" Line="10" Column="23" />
+      <File FileName="Assets\Script\Game\login\logic\ReqLoginServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Net\SendMsg.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Net\TcpClient.cs" Line="7" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

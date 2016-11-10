@@ -103,6 +103,7 @@
     <Compile Include="Assets\Script\Net\ReceiveMsg.cs" />
     <Compile Include="Assets\Script\Net\SendMsg.cs" />
     <Compile Include="Assets\Script\Net\TcpClient.cs" />
+    <Compile Include="Assets\Script\UI\BackGround.cs" />
     <Compile Include="Assets\Script\UI\DestoryByContact.cs" />
     <Compile Include="Assets\Script\UI\DestroyByBoundary.cs" />
     <Compile Include="Assets\Script\UI\EvasiveManeuver.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\Script\UI\MoveController.cs" />
     <Compile Include="Assets\Script\UI\PlayerController.cs" />
     <Compile Include="Assets\Script\UI\RamdomRotator.cs" />
-    <Compile Include="Assets\Script\UI\ScrollingBackGround.cs" />
     <Compile Include="Assets\Script\UI\WeaponController.cs" />
     <Compile Include="Assets\Script\Util\ByteBuffer.cs" />
     <Compile Include="Assets\Script\Util\ExcelUtil.cs" />
