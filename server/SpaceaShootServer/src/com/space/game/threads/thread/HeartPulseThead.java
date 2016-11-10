@@ -1,9 +1,6 @@
 package com.space.game.threads.thread;
 
-import java.util.stream.Collectors;
-
 import org.apache.log4j.Logger;
-
 import com.space.game.player.bean.Player;
 import com.space.game.server.ManagerServer;
 import com.space.game.struts.SessionAttribute;
